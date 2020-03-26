@@ -113,6 +113,8 @@ def training_loop(
     sched_args              = {},       # Options for train.TrainingSchedule.
     grid_args               = {},       # Options for train.setup_snapshot_image_grid().
     metric_arg_list         = [],       # Options for MetricGroup.
+    #tf_config               = {},       # Options for tflib.init_tf().
+    tf_config               = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True)),
     tf_config               = {},       # Options for tflib.init_tf().
     data_dir                = None,     # Directory to load datasets from.
     G_smoothing_kimg        = 10,     # Half-life of the running average of generator weights.
